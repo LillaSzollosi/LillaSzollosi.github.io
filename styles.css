@@ -3,25 +3,27 @@
 /* Body styling */
 body {
     background-color: #fdf3dd !important;
-    font-family: "Lora", serif; 
-    color: #ef601e; 
-    font-optical-sizing: auto; 
-    font-weight: 400; 
-    font-style: normal; 
+    font-family: "Lora", serif;
+    color: #ef601e;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
 }
 
 /* Header styling */
 header {
-    width: 100%; 
-    background-color: #fdf3dd; 
-    padding: 10px 0; 
+    width: 100%;
+    background-color: #fdf3dd;
+    padding: 10px 0;
     border-bottom: 2px solid #ef601e;
     margin: 0;
     top: 0;
     left: 0;
     display: flex;
     justify-content: space-between;
-    box-sizing: border-box; 
+    box-sizing: border-box;
     position: fixed;
     z-index: 1000;
 }
@@ -29,7 +31,7 @@ header {
 /* Left Header Section (logo and Dropdown) */
 .left-header {
     display: flex;
-    align-items: center; 
+    align-items: center;
 }
 
 /* Hamburger Icon */
@@ -85,30 +87,7 @@ nav ul li a {
 }
 
 nav ul li:hover {
-    background-color: #CB962E; 
-}
-
-/* Mobile-specific styles */
-@media (max-width: 767px) {
-    header {
-        flex-direction: column;
-        align-items: center;
-        padding: 15px 10px; /* Adjust padding for mobile */
-    }
-
-    .hamburger {
-        margin-top: 10px;
-    }
-
-    nav ul li {
-        padding: 20px; /* Increase padding for better touch targets */
-        font-size: 2em; /* Make the font size bigger */
-    }
-
-    .right-header {
-        width: 100%;
-        margin-top: 10px;
-    }
+    background-color: #CB962E;
 }
 
 /* Right Header Section (Search bar) */
@@ -139,24 +118,37 @@ nav ul li:hover {
     background-color: #fdf3dd;
 }
 
-/* Header image */
-.header-image {
-    width: 100%;
-    height: auto;
-    margin-top: 20px;
-    max-width: 100%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 /* Mobile devices */
 @media (max-width: 767px) {
-    .header-image {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 10px;
+    }
+
+    .hamburger {
+        margin-top: 10px;
+    }
+
+    .right-header {
         width: 100%;
-        max-width: 100%;
-        margin-left: auto; 
-        margin-right: auto; 
+        margin-top: 10px;
+    }
+
+    /* Dropdown menu adjustments for mobile */
+    nav ul {
+        position: static;
+        width: 100%;
+    }
+
+    nav ul li {
+        padding: 20px; /* Increase padding for better touch targets */
+        font-size: 1.5em; /* Make the font size bigger */
+    }
+
+    .right-header input[type="text"] {
+        width: 100%; /* Make the search bar full-width on mobile */
+        margin-top: 10px;
     }
 }
 
@@ -165,7 +157,7 @@ nav ul li:hover {
     .header-image {
         width: 100%;
         max-width: 100%;
-        margin-left: auto; 
+        margin-left: auto;
         margin-right: auto;
     }
 }
@@ -182,10 +174,11 @@ nav ul li:hover {
 
 /* Logo Image */
 .logo-image {
-    max-height: 120px; /* Adjust this value if it's still too small */
-    width: auto; /* Ensure the width maintains the aspect ratio */
-    display: block; /* This ensures the image is treated as a block-level element */
-    margin: 0 auto; /* This centers the image horizontally */
+    max-height: 120px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
 }
 
 /* Center Header Styling */
@@ -195,4 +188,36 @@ nav ul li:hover {
     align-items: center; /* Centers content vertically */
     height: 100px; /* Ensure enough height to center logo */
     width: 100%;
+    position: relative;
+}
+
+/* Header Image */
+.header-image {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Adjustments for specific breakpoints */
+@media (max-width: 767px) {
+    .header-image {
+        width: 100%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Desktop and Large Screen Adjustments */
+@media (min-width: 1025px) {
+    .header-image {
+        width: 100%;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
