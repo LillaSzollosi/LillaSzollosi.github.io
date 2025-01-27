@@ -174,12 +174,43 @@ nav ul li:hover {
 
 /* Logo Image */
 .logo-image {
-    max-height: 120px;
-    width: auto;
-    display: block;
-    margin: 0 auto;
-    position: absolute;
+    max-height: 80px; /* Adjust for mobile view */
+    width: auto; /* Ensure the width maintains the aspect ratio */
+    display: block; /* This ensures the image is treated as a block-level element */
+    margin: 0 auto; /* This centers the image horizontally */
 }
+
+/* Center Header Styling */
+.center-header {
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    height: 100px; /* Ensure enough height to center logo */
+    width: 100%;
+}
+
+/* Mobile-specific styles (default settings for mobile) */
+@media (max-width: 767px) {
+    .logo-image {
+        max-height: 80px; /* Reduce the logo size for mobile */
+        width: auto; /* Maintain aspect ratio */
+    }
+}
+
+/* Tablet devices (responsive scaling) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .logo-image {
+        max-height: 100px; /* Adjust the logo size for tablets */
+    }
+}
+
+/* Larger screens (desktops) */
+@media (min-width: 1025px) {
+    .logo-image {
+        max-height: 120px; /* Increase logo size for larger screens */
+    }
+}
+
 
 /* Center Header Styling */
 .center-header {
