@@ -12,9 +12,9 @@ body {
 /* Header styling */
 header {
     width: 100%; 
-    background-color: #B5DEFF; 
+    background-color: #fdf3dd; 
     padding: 10px 0; 
-    border-bottom: 3px solid #ef601e;
+    border-bottom: 2px solid #ef601e;
     margin: 0;
     top: 0;
     left: 0;
@@ -43,8 +43,8 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     cursor: pointer;
     padding: 10px;
     margin-right: 20px;
@@ -71,6 +71,45 @@ nav ul {
     z-index: 1;
     opacity: 0;
     transition: opacity 0.3s ease;
+}
+/* Mobile devices */
+@media (max-width: 767px) {
+    header {
+        padding: 15px 10px;
+        flex-direction: column; 
+        align-items: center;
+    }
+    
+   
+    .center-header h1 {
+        font-size: 1.8em;
+    }
+    .hamburger {
+        margin-top: 10px;
+    }
+    
+    .right-header {
+        width: 100%;
+        margin-top: 10px; 
+    }
+}
+
+/* Tablet devices */
+@media (min-width: 768px) and (max-width: 1024px) {
+    header {
+        padding: 20px 15px;
+        flex-direction: row; 
+    }
+    .center-header h1 {
+        font-size: 2.5em;
+    }
+    .right-header {
+        width: 60%;
+    }
+
+    .hamburger {
+        margin-top: 0;
+    }
 }
 
 nav.show ul {
