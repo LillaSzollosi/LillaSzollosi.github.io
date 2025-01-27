@@ -72,46 +72,6 @@ nav ul {
     opacity: 0;
     transition: opacity 0.3s ease;
 }
-/* Mobile devices */
-@media (max-width: 767px) {
-    header {
-        padding: 15px 10px;
-        flex-direction: column; 
-        align-items: center;
-    }
-    
-   
-    .center-header h1 {
-        font-size: 1.8em;
-    }
-    .hamburger {
-        margin-top: 10px;
-    }
-    
-    .right-header {
-        width: 100%;
-        margin-top: 10px; 
-    }
-}
-
-/* Tablet devices */
-@media (min-width: 768px) and (max-width: 1024px) {
-    header {
-        padding: 20px 15px;
-        flex-direction: row; 
-    }
-    .center-header h1 {
-        font-size: 2.5em;
-    }
-    .right-header {
-        width: 60%;
-    }
-
-    .hamburger {
-        margin-top: 0;
-    }
-}
-
 nav.show ul {
     display: block;
     opacity: 1;
@@ -132,6 +92,17 @@ nav ul li a {
 nav ul li:hover {
     background-color: #CB962E; 
 }
+/* Mobile-specific styles */
+@media (max-width: 767px) {
+    nav ul li {
+        padding: 15px; /* Increase padding for better touch targets */
+        font-size: 1.3em; /* Make the font size bigger */
+    }
+
+    nav ul li a {
+        font-size: 1.3em; /* Ensure the link text is also larger */
+    }
+}
 
 /* Right Header Section (Search bar) */
 .right-header form {
@@ -150,7 +121,7 @@ nav ul li:hover {
 .right-header button {
     padding: 5px 10px;
     font-size: 1em;
-    background-color: #B5DEFF;
+    background-color: #fdf3dd;
     color: #ef601e;
     border: none;
     border-radius: 5px;
@@ -158,7 +129,7 @@ nav ul li:hover {
 }
 
 .right-header button:hover {
-    background-color: #B5DEFF;
+    background-color: #fdf3dd;
 }
 /* Mobile devices */
 @media (max-width: 767px) {
