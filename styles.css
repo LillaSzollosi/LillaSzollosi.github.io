@@ -9,6 +9,7 @@ body {
     font-weight: 400; 
     font-style: normal; 
 }
+
 /* Header styling */
 header {
     width: 100%; 
@@ -29,13 +30,6 @@ header {
 .left-header {
     display: flex;
     align-items: center; 
-}
-
-.left-header h1 {
-    margin: 0;
-    font-size: 2em;
-    color: #ef601e;
-    margin-right: 20px;
 }
 
 /* Hamburger Icon */
@@ -72,6 +66,7 @@ nav ul {
     opacity: 0;
     transition: opacity 0.3s ease;
 }
+
 nav.show ul {
     display: block;
     opacity: 1;
@@ -92,15 +87,27 @@ nav ul li a {
 nav ul li:hover {
     background-color: #CB962E; 
 }
+
 /* Mobile-specific styles */
 @media (max-width: 767px) {
-    nav ul li {
-        padding: 15px; /* Increase padding for better touch targets */
-        font-size: 1.3em; /* Make the font size bigger */
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 10px; /* Adjust padding for mobile */
     }
 
-    nav ul li a {
-        font-size: 1.3em; /* Ensure the link text is also larger */
+    .hamburger {
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        padding: 20px; /* Increase padding for better touch targets */
+        font-size: 2em; /* Make the font size bigger */
+    }
+
+    .right-header {
+        width: 100%;
+        margin-top: 10px;
     }
 }
 
@@ -131,46 +138,16 @@ nav ul li:hover {
 .right-header button:hover {
     background-color: #fdf3dd;
 }
-/* Mobile devices */
-@media (max-width: 767px) {
-    header {
-        padding: 15px 10px; 
-        flex-direction: column;
-        align-items: center;
-    }
 
-    .center-header h1 {
-        font-size: 1.8em;
-    }
-
-    .hamburger {
-        margin-top: 10px; 
-    }
-    
-    .right-header {
-        width: 100%; 
-        margin-top: 10px; 
-    }
-}
-
-/* Heading 1 styling */
-h1 {
-    color: #ef601e;
-}
-
-/* Paragraph styling */
-p {
-    color: #ef601e; 
-}
-/*header image */
+/* Header image */
 .header-image {
-    width: 100%; 
-    height: auto; 
+    width: 100%;
+    height: auto;
     margin-top: 20px;
-    max-width: 100%; 
-    display: block; 
-    margin-left: auto; 
-    margin-right: auto; 
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Mobile devices */
@@ -198,7 +175,24 @@ p {
     .header-image {
         width: 100%;
         max-width: 1200px;
-        margin-left: auto; 
-        margin-right: auto; 
+        margin-left: auto;
+        margin-right: auto;
     }
+}
+
+/* Logo Image */
+.logo-image {
+    max-height: 120px; /* Adjust this value if it's still too small */
+    width: auto; /* Ensure the width maintains the aspect ratio */
+    display: block; /* This ensures the image is treated as a block-level element */
+    margin: 0 auto; /* This centers the image horizontally */
+}
+
+/* Center Header Styling */
+.center-header {
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    height: 100px; /* Ensure enough height to center logo */
+    width: 100%;
 }
