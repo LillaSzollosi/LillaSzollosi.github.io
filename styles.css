@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Sixtyfour+Convergence&display=swap");
+
+/* Body styling */
+body {
+    background-color: #FCFFA6 !important; /* Light yellow background */
+    font-family: "Lora", serif; /* Use Lora font */
+    color: #cab8ff; /* Lavender text color */
+    font-optical-sizing: auto; /* Enable font optical sizing */
+    font-weight: 400; /* Normal weight */
+    font-style: normal; /* Normal font style */
+}
+/* Header styling */
+/* Header Styling */
+header {
+    width: 100%; /* Full width */
+    background-color: #c1ffd7; /* Light green background */
+    padding: 10px 0; /* Fixed padding (removed space between px) */
+    border-bottom: 3px solid #B5DEFF; /* Blue line under header */
+    margin: 0; /* Remove margin */
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between; /* Space between menu and title */
+    box-sizing: border-box; /* Include padding and borders in width/height calculation */
+    position: fixed; /* Fixed to the top */
+    z-index: 1000;
+}
+
+/* Left Header Section (logo and Dropdown) */
+.left-header {
+    display: flex;
+    align-items: center; /* Vertically align items */
+}
+
+.left-header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #cab8ff;
+    margin-right: 20px;
+}
+
+/* Hamburger Icon */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    padding: 10px;
+    margin-right: 20px;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #cab8ff;
+    margin: px 0;
+}
+
+/* Dropdown menu */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    position: absolute;
+    background-color: #cab8ff;
+    top: 50px;
+    left: 0;
+    width: 200px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Fix typo in "transition" */
+}
+
+nav.show ul {
+    display: block;
+    opacity: 1;
+}
+
+nav ul li {
+    padding: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+    display: block;
+}
+
+nav ul li:hover {
+    background-color: #9a8fcc; /* Light purple on hover */
+}
+
+/* Right Header Section (Search bar) */
+.right-header form {
+    display: flex;
+    align-items: center;
+}
+
+.right-header input[type="text"] { /* Fix selector here */
+    padding: 5px;
+    font-size: 1em;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.right-header button {
+    padding: 5px 10px;
+    font-size: 1em;
+    background-color: #c1ffd7;
+    color: #cab8ff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.right-header button:hover {
+    background-color: #9a8fcc; /* Change to a hover color */
+}
+
+/* Heading 1 styling */
+h1 {
+    color: #cab8ff; /* Lavender text color */
+}
+
+/* Paragraph styling */
+p {
+    color: #cab8ff; /* Lavender text color */
+}
