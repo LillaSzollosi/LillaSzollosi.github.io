@@ -1,15 +1,15 @@
-// Function to toggle the dropdown menu
-function toggleMenu() {
-    const menu = document.getElementById('menu');
-    menu.classList.toggle('show');
-}
+document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.querySelector(".hamburger");
+    const dropdownMenu = document.querySelector(".dropdown-menu");
 
-// Close the dropdown when clicking outside of it
-document.addEventListener('click', function(event) {
-    const menu = document.getElementById('menu');
-    const hamburger = document.querySelector('.hamburger');
-    
-    if (!hamburger.contains(event.target) && !menu.contains(event.target)) {
-        menu.classList.remove('show');
-    }
+    hamburger.addEventListener("click", function () {
+        dropdownMenu.classList.toggle("show");
+    });
+
+    // Close the dropdown if clicked outside
+    window.addEventListener("click", function (event) {
+        if (!hamburger.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.classList.remove("show");
+        }
+    });
 });
