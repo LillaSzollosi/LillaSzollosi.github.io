@@ -22,6 +22,44 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
+/* General Header Layout */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fdf3dd;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ef601e;  /* Thin line under the header */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.left-header,
+.center-header,
+.right-header {
+    display: flex;
+    align-items: center;
+}
+
+.left-header {
+    margin-right: 20px;
+}
+
+.center-header {
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.right-header {
+    margin-left: 20px;
+}
+
+/* Make sure the logo doesn't stretch too much */
+.logo-image {
+    max-height: 50px;
+    width: auto;
+}
 
 /* Header Styling */
 header {
@@ -67,21 +105,64 @@ header {
     flex-grow: 1;
 }
 
-/* Right Header (Search) */
+/* Right Header (Home Icon) */
 .right-header {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+}
+
+/* Home Button Styles */
+.home-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-left: 20px;  /* Space from other elements */
+}
+
+.home-button svg {
+    width: 24px; /* Icon size */
+    height: 24px; /* Icon size */
+    color: #ef601e; /* Icon color */
+    transition: transform 0.2s ease, color 0.2s ease; /* Smooth transition */
+}
+
+/* Hover effect for home button */
+.home-button:hover svg {
+    color: #cb962e; /* Change color on hover */
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Mobile-first responsiveness */
+@media (max-width: 767px) {
+    .right-header {
+        justify-content: center;  /* Center align the home button */
+    }
+
+    .home-button svg {
+        width: 20px; /* Smaller icon on mobile */
+        height: 20px; /* Smaller icon on mobile */
+    }
+}
+
+/* Desktop and larger screens */
+@media (min-width: 768px) {
+    .right-header {
+        justify-content: flex-end;  /* Align the home button to the right */
+    }
 }
 
 /* Hamburger Menu */
 .hamburger {
+    cursor: pointer; 
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     width: 25px;
     height: 25px;
-    cursor: pointer;
 }
 
 .hamburger .line {
@@ -127,6 +208,22 @@ header {
 
 .dropdown-menu ul li:hover {
     background-color: #CB962E;
+}
+/* Style for the home button */
+.home-button {
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;  /* Remove underline from link */
+}
+
+.home-button svg {
+    width: 24px;
+    height: 24px;
+    color: #ef601e; /* Color of the icon */
+}
+
+.home-button:hover svg {
+    color: #cb962e;  /* Hover color for the icon */
 }
 
 /* Picture Styling */
