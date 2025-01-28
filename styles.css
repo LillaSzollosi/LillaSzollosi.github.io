@@ -75,11 +75,12 @@ header {
     box-sizing: border-box;
 }
 /* Mobile-first Styles */
-@media (max-width: 767px)
+@media (max-width: 767px) {
     .header-container {
         flex-direction: column;  /* Stack the items vertically */
         padding: 15px;
     }
+}
 
     .left-header,
     .right-header {
