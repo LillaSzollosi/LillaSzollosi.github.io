@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css"> <!-- Link to the same CSS file -->
-    <title>Kakut - Pastelli Leipomo</title>
+    <title>Mobile First Header</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header Section -->
     <header>
-        <div class="left-header">
-            <div class="hamburger" onclick="toggleMenu()">        
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
+        <div class="header-container">
+            <!-- Left side (Hamburger menu) -->
+            <div class="left-header">
+                <div class="hamburger" onclick="toggleMenu()">        
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
             </div>
-            <nav id="menu" class="dropdown-menu">
-                <ul>
-                    <li><a href="kakut.html">Kakut</a></li>
-                    <li><a href="leivonnaiset.html">Leivonnaiset</a></li>
-                    <li><a href="jaatelot.html">Jäätelöt</a></li>
-                    <li><a href="lahetareseptit.html">Lähetä resepti</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="center-header">
-            <img src="https://github.com/LillaSzollosi/LillaSzollosi.github.io/blob/main/PastelliLogo.PNG?raw=true" alt="Pastelli Logo" class="logo-image">
-        </div>
-        <!-- Right Header (Home button) -->
+
+            <!-- Center (Logo) -->
+            <div class="center-header">
+                <img src="https://github.com/LillaSzollosi/LillaSzollosi.github.io/blob/main/PastelliLogo.PNG?raw=true" alt="Pastelli Logo" class="logo-image" />
+            </div>
+
+<!-- Right Header (Home Icon) -->
 <div class="right-header">
     <a href="index.html" class="home-button">
-        <!-- Pretty Home SVG Icon -->
+        <!-- Home icon SVG -->
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef601e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M10 20V14H14V20H19V12H22L12 3L2 12H5V20H10Z"></path>
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
         </svg>
     </a>
 </div>
+
+        <!-- Dropdown menu for mobile -->
+        <nav id="menu" class="dropdown-menu">
+            <ul>
+                <li><a href="kakut.html">Kakut</a></li>
+                <li><a href="leivonnaiset.html">Leivonnaiset</a></li>
+                <li><a href="jaatelot.html">Jäätelöt</a></li>
+                <li><a href="reseptit.html">Reseptit</a></li>
+            </ul>
+        </nav>
     </header>
-    
 
-    <!-- Main Content for Kakut Page -->
-    <main>
-        <h1>Welcome to the Kakut Page</h1>
-        <p>This is the page dedicated to Kakut.</p>
-    </main>
-
-    <script src="script.js"></script> <!-- Include JavaScript for menu toggle -->
+    <script src="script.js"></script>
 </body>
 </html>
