@@ -1,51 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="styles.css">
-<title>Pastelli leipomo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile First Header</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <div class="left-header">
-        <div class="hamburger" onclick="toggleMenu()">        
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
-        <nav id="menu" class="dropdown">
-            <ul>
-                    <li><a href="#">Kakut</a></li>
-                    <li><a href="#">Leivonnaiset</a></li>
-                    <li><a href="#">Jäätelöt</a></li>
-                    <li><a href="#">Lähetä resepti</a></li>
-            </ul>
-        </nav>
-    </div>
-    <div class="center-header">
-        <div class="center-header">
-            <img src="https://github.com/LillaSzollosi/LillaSzollosi.github.io/blob/main/PastelliLogo.PNG?raw=true" alt="Pastelli Logo" class="logo-image" />
-        </div>
-    <div class="right-header">
-    <form action="#" method="get">
-        <!-- Use an SVG icon -->
-        <button type="submit" class="search-button">
-            <!-- Magnifying glass SVG -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef601e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="16" y1="16" x2="20" y2="20"></line>
-            </svg>
-        </button>
-    </form>
-</div>
+        <div class="header-container">
+            <!-- Left side (Hamburger menu) -->
+            <div class="left-header">
+                <div class="hamburger" onclick="toggleMenu()">        
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </div>
+
+            <!-- Center (Logo) -->
+            <div class="center-header">
+                <img src="https://github.com/LillaSzollosi/LillaSzollosi.github.io/blob/main/PastelliLogo.PNG?raw=true" alt="Pastelli Logo" class="logo-image" />
+            </div>
+
+            <!-- Right side (Search Icon) -->
+            <div class="right-header">
+                <button class="search-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef601e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="16" y1="16" x2="20" y2="20"></line>
                     </svg>
                 </button>
-            </form>
+            </div>
         </div>
+
+        <!-- Dropdown menu for mobile -->
+        <nav id="menu" class="dropdown-menu">
+            <ul>
+                <li><a href="#">Kakut</a></li>
+                <li><a href="#">Leivonnaiset</a></li>
+                <li><a href="#">Jäätelöt</a></li>
+                <li><a href="#">Lähetä resepti</a></li>
+            </ul>
+        </nav>
     </header>
-<img src="https://raw.githubusercontent.com/LillaSzollosi/LillaSzollosi.github.io/main/Home%20(2).png" alt="Descriptive text" class="header-image">
-<h1></h1>
-<p>My first paragraph.</p>
-<script src="script.js"></script>
+    <div class="image-container">
+        <img src="https://github.com/LillaSzollosi/LillaSzollosi.github.io/blob/main/Adress.PNG?raw=true" alt="Address Image" class="responsive-image">
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

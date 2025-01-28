@@ -1,40 +1,58 @@
+/* Import Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Sixtyfour+Convergence&display=swap");
 
-/* Body styling */
+/* Colors */
+:root {
+  --primary-color: #ef601e;
+  --secondary-color: #fdf3dd;
+  --hover-color: #cb962e;
+}
+
+/* Global Styles */
 body {
-    background-color: #fdf3dd !important;
-    font-family: "Lora", serif;
-    color: #ef601e;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
+  margin: 0;
+  font-family: 'Lora', serif;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+/* General reset for margins and paddings */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-/* Header styling */
+/* Header Styling */
 header {
-    width: 100%;
     background-color: #fdf3dd;
-    padding: 10px 0;
     border-bottom: 2px solid #ef601e;
-    margin: 0;
+    position: fixed;
     top: 0;
     left: 0;
-    display: flex;
-    justify-content: space-between;
-    box-sizing: border-box;
-    position: fixed;
+    width: 100%;
     z-index: 1000;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
-/* Left Header Section (logo and Dropdown) */
+/* Header Container */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Left Header (Hamburger Menu) */
 .left-header {
     display: flex;
     align-items: center;
+    margin-right: auto; /* Push the hamburger to the left */
 }
 
-/* Hamburger Icon */
 .hamburger {
     display: flex;
     flex-direction: column;
@@ -42,232 +60,187 @@ header {
     width: 25px;
     height: 25px;
     cursor: pointer;
-    padding: 10px;
-    margin-right: 20px;
+    padding: 5px;
 }
 
 .hamburger .line {
     width: 25px;
     height: 3px;
     background-color: #ef601e;
-    margin: px 0;
 }
 
-/* Dropdown menu */
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: none;
-    position: absolute;
-    background-color: #ef601e;
-    top: 50px;
-    left: 0;
-    width: 200px;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-nav.show ul {
-    display: block;
-    opacity: 1;
-}
-
-nav ul li {
-    padding: 10px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    font-size: 1.1em;
-    display: block;
-}
-
-nav ul li:hover {
-    background-color: #CB962E;
-}
-
-/* Right Header Section (Search bar) */
-.right-header form {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Center the search icon */
-    padding: 0;  /* Make sure padding is removed */
-    margin: 0;   /* Make sure margin is removed */
-}
-
-/* Right Header Section (Search bar) */
-.right-header form {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Center the search icon */
-    padding: 0;  /* Make sure padding is removed */
-    margin: 0;   /* Make sure margin is removed */
-}
-
-/* Style for the search button */
-.search-button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+/* Center Header (Logo) */
+.center-header {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-grow: 1;
 }
 
-/* Adjust SVG icon size */
-.search-button svg {
-    width: 20px; /* Adjust the size of the icon */
-    height: 20px; /* Adjust the size of the icon */
-    stroke: #ef601e; /* Color of the magnifying glass */
+.logo-image {
+    max-height: 50px; /* Logo size */
+    width: auto;
+    display: block;
 }
 
-/* Change color on hover */
-.search-button:hover svg {
-    stroke: #cb962e; /* Color change when hovered */
+/* Right Header (Search Icon) */
+.right-header {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Push search to the right */
 }
 
-/* Hide the input field completely */
-.right-header input[type="text"] {
-    display: none; /* Ensure the search input is hidden */
+/* Search button */
+.search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
-
-
-/* Mobile devices */
+/* Mobile-first adjustments */
 @media (max-width: 767px) {
-    header {
-        flex-direction: column;
-        align-items: center;
-        padding: 15px 10px;
+    .header-container {
+        flex-direction: column; /* Stack items vertically on mobile */
+        padding: 10px 0; /* Adjust padding for smaller screens */
     }
 
-    .hamburger {
-        margin-top: 10px;
+    .center-header {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .logo-image {
+        max-height: 40px; /* Reduce logo size for mobile */
+    }
+
+    .left-header,
+    .right-header {
+        width: 100%; /* Ensure they take up the full width */
+        text-align: center; /* Center the hamburger and search on mobile */
     }
 
     .right-header {
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    /* Dropdown menu adjustments for mobile */
-    nav ul {
-        position: static;
-        width: 100%;
-    }
-
-    nav ul li {
-        padding: 20px; /* Increase padding for better touch targets */
-        font-size: 1.5em; /* Make the font size bigger */
-    }
-
-    .right-header input[type="text"] {
-        width: 100%; /* Make the search bar full-width on mobile */
-        margin-top: 10px;
+        margin-top: 10px; /* Add space between search and hamburger on mobile */
     }
 }
 
-/* Tablet devices */
-@media (min-width: 768px) and (max-width: 1024px) {
-    .header-image {
-        width: 100%;
-        max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
+/* Desktop and larger screens */
+@media (min-width: 768px) {
+    .header-container {
+        flex-direction: row; /* Align items horizontally on larger screens */
     }
-}
 
-/* Larger screens (desktops) */
-@media (min-width: 1025px) {
-    .header-image {
-        width: 100%;
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
+    .left-header {
+        margin-right: 20px; /* More space on the left for hamburger */
     }
-}
 
-/* Logo Image */
-.logo-image {
-    max-height: 60px; /* Adjust for mobile view */
-    width: auto; /* Ensure the width maintains the aspect ratio */
-    display: block; /* This ensures the image is treated as a block-level element */
-    margin: 0 auto; /* This centers the image horizontally */
-}
+    .center-header {
+        margin-left: 0;
+        margin-right: 0;
+    }
 
-/* Center Header Styling */
-.center-header {
-    display: flex;
-    justify-content: center; /* Centers content horizontally */
-    align-items: center; /* Centers content vertically */
-    height: 100px; /* Ensure enough height to center logo */
-    width: 100%;
-}
+    .right-header {
+        margin-left: 20px; /* Space between search and hamburger */
+    }
 
-/* Mobile-specific styles (default settings for mobile) */
-@media (max-width: 767px) {
     .logo-image {
-        max-height: 60px; /* Reduce the logo size for mobile */
-        width: auto; /* Maintain aspect ratio */
+        max-height: 60px; /* Slightly bigger logo on larger screens */
     }
 }
 
-/* Tablet devices (responsive scaling) */
-@media (min-width: 768px) and (max-width: 1024px) {
-    .logo-image {
-        max-height: 100px; /* Adjust the logo size for tablets */
-    }
-}
-
-/* Larger screens (desktops) */
-@media (min-width: 1025px) {
-    .logo-image {
-        max-height: 120px; /* Increase logo size for larger screens */
-    }
-}
-
-
-/* Center Header Styling */
-.center-header {
-    display: flex;
-    justify-content: center; /* Centers content horizontally */
-    align-items: center; /* Centers content vertically */
-    height: 100px; /* Ensure enough height to center logo */
+/* Dropdown Menu (Mobile/Tablet only) */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
     width: 100%;
-    position: relative;
+    background-color: var(--primary-color);
+    text-align: center;
 }
 
-/* Header Image */
-.header-image {
-    width: 100%;
-    height: auto;
-    margin-top: 20px;
-    max-width: 100%;
+.dropdown-menu.show {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-/* Adjustments for specific breakpoints */
+.dropdown-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-menu ul li {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.dropdown-menu ul li a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.dropdown-menu ul li:hover {
+    background-color: var(--hover-color);
+}
+
+/* Center and right-aligned search button styles */
+.search-button svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Footer */
+footer {
+  background-color: var(--secondary-color);
+  border-top: 2px solid var(--primary-color);
+  padding: 10px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo {
+  max-height: 50px;
+}
+
+.contact-info {
+  text-align: right;
+}
+
+.insta-icon {
+  width: 20px;
+  height: 20px;
+  margin-top: 5px;
+}
+/* Picture Styling */
+.image-container {
+    width: 100%;
+    text-align: center; /* Center the image */
+    padding: 80px 0 20px; /* Added more space at the top */
+}
+
+.responsive-image {
+    max-width: 100%; /* Make sure the image doesn't stretch beyond its natural size */
+    height: auto; /* Keep aspect ratio */
+    display: block; /* Ensure it behaves like a block element */
+}
+
+/* Mobile-first adjustments */
 @media (max-width: 767px) {
-    .header-image {
-        width: 100%;
-        max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
+    .responsive-image {
+        max-width: 100%; /* Image takes up full width on mobile */
     }
 }
 
-/* Desktop and Large Screen Adjustments */
-@media (min-width: 1025px) {
-    .header-image {
-        width: 100%;
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
+/* For larger screens */
+@media (min-width: 768px) {
+    .responsive-image {
+        max-width: 80%; /* Limit width to 80% on larger screens */
+        margin: 0 auto; /* Center the image */
     }
 }
