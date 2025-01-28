@@ -310,3 +310,71 @@ header {
         padding-top: 120px; /* Add more space for larger screens */
     }
 }
+/* General Styling for Content Sections */
+.content-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 40px auto; /* Spacing from the section above */
+    justify-content: space-between;
+  }
+  
+  .content-section > div {
+    flex: 1 1 calc(50% - 20px); /* Two sections per row */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .content-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Rounded corners for images */
+    margin-bottom: 15px;
+  }
+  
+  .content-text h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ef601e; /* Use your primary color */
+  }
+  
+  .content-text p {
+    font-size: 1rem;
+    color: #333; /* Neutral text color */
+  }
+  
+  /* Adjust for Mobile (default behavior) */
+  @media (max-width: 767px) {
+    .content-section > div {
+      flex: 1 1 100%; /* Stack items vertically */
+      text-align: center; /* Center align text and images */
+    }
+  
+    .content-image {
+      max-width: 90%; /* Smaller images on mobile */
+    }
+  }
+  
+  /* Adjust for Widescreen */
+  @media (min-width: 768px) {
+    .content-section > div {
+      flex-direction: row; /* Display image and text side by side */
+      text-align: left; /* Align text to the left */
+      gap: 20px; /* Add space between image and text */
+    }
+  
+    .content-text {
+      flex: 1;
+      padding: 0 15px;
+    }
+  
+    .content-image {
+      flex: 1;
+      max-width: 100%; /* Prevent image stretching */
+      margin-bottom: 0; /* Remove bottom margin for side-by-side layout */
+    }
+  }
+  
+  
