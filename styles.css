@@ -22,17 +22,18 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
-/* General Header Layout */
-header {
+/* General Header Styling */
+.header-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between;  /* Space between items */
     align-items: center;
     background-color: #fdf3dd;
     padding: 10px 20px;
-    border-bottom: 1px solid #ef601e;  /* Thin line under the header */
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 100;
+    width: 100%;
+    z-index: 10; /* Ensure the header stays on top */
+    border-bottom: 1px solid #ef601e; /* Thin line at the bottom of the header */
 }
 
 .left-header,
@@ -73,6 +74,32 @@ header {
     padding: 0 10px;
     box-sizing: border-box;
 }
+/* Mobile-first Styles */
+@media (max-width: 767px)
+    .header-container {
+        flex-direction: column;  /* Stack the items vertically */
+        padding: 15px;
+    }
+
+    .left-header,
+    .right-header {
+        width: 100%;
+        text-align: center;
+    }
+
+    .center-header {
+        margin-top: 10px;  /* Add some margin to push the logo down */
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .logo-image {
+        max-height: 40px; 
+        width: auto;
+    }
+
 
 /* Header container */
 .header-container {
