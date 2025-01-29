@@ -573,7 +573,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative; /* Keep it inside the content flow */
+    position: relative;
     width: 100%;
     margin-top: auto; /* Push the footer to the bottom */
 }
@@ -621,68 +621,51 @@ main {
     transform: scale(1.1); /* Slightly enlarge icon on hover */
 }
 
-/* Make the footer more mobile-friendly */
+/* Mobile Layout Adjustments */
 @media (max-width: 767px) {
     .site-footer {
-        flex-direction: column; /* Stack the footer items vertically */
+        flex-direction: column; /* Stack items vertically on mobile */
         align-items: center; /* Center all content */
-        padding: 20px; /* Increase padding for better spacing on mobile */
+        padding: 20px 10px; /* Adjust padding for mobile */
     }
 
     .footer-content {
-        flex-direction: column; /* Stack the logo and right section vertically */
+        flex-direction: row; /* Row layout for logo, email, and social icons */
+        justify-content: space-between;
         align-items: center;
-        width: 100%; /* Ensure it spans the entire width */
+        width: 100%;
     }
 
     .footer-logo {
-        max-width: 30px; /* Reduce the logo size even more on mobile */
-        height: auto;
-        margin-bottom: 10px; /* Space between logo and other content */
+        max-width: 30px; /* Smaller logo on mobile */
+        margin-right: 10px; /* Space between logo and email */
     }
 
     .footer-email {
         font-size: 0.8rem; /* Slightly smaller email font */
-        text-align: right; /* Align email text to the right */
-        margin-bottom: 10px; /* Space between email and social icons */
-        width: 100%; /* Ensure email takes up the full width */
+        text-align: right; /* Align email to the right */
+        margin-bottom: 10px; /* Add space below the email */
+        width: 100%;
         display: flex;
         justify-content: flex-end; /* Align email to the right */
     }
 
     .social-icons {
-        gap: 12px; /* Increase space between social icons */
+        gap: 12px; /* Increase space between icons */
         justify-content: center; /* Center the icons horizontally */
         width: 100%; /* Ensure icons are centered */
+        margin-top: 10px; /* Add space above the icons */
     }
 
     .social-icon {
-        max-width: 18px; /* Reduce the social icons further */
-    }
-
-    /* Adjust layout for left-side logo, right-side email, and below them social links */
-    .footer-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-    }
-
-    .footer-right {
-        align-self: flex-end; /* Align email to the right */
-        margin-top: 10px; /* Space between logo and email */
-    }
-
-    .social-icons {
-        align-self: center; /* Center social icons below email */
+        max-width: 18px; /* Reduce the size of the social icons */
     }
 }
 
-/* For Tablets or Larger Screens: Keep the desktop layout */
+/* For Tablets or Larger Screens */
 @media (min-width: 768px) {
     .site-footer {
         flex-direction: row; /* Footer items should be side-by-side on larger screens */
-        padding: 10px 20px;
     }
 
     .footer-content {
