@@ -512,6 +512,16 @@ header {
     overflow: hidden; /* Prevent horizontal overflow */
 }
 
+/* Tulossa Image Section */
+.tulossa-section {
+    display: flex;
+    justify-content: center; /* Center the image on widescreen */
+    align-items: center;
+    margin-top: 80px; /* Space from the header */
+    padding: 0 20px; /* Padding for spacing */
+    overflow: hidden; /* Prevent horizontal overflow */
+}
+
 .tulossa-image {
     max-width: 100%; /* Make the image fit within the container */
     height: auto; /* Maintain aspect ratio */
@@ -525,7 +535,7 @@ header {
     }
 
     .tulossa-image {
-        width: 80%; /* Reduce image size on mobile */
+        width: 90%; /* Reduce image size on mobile to fit better */
         height: auto; /* Maintain aspect ratio */
         margin-bottom: 15px; /* Space below the image */
     }
