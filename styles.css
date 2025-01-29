@@ -342,7 +342,7 @@ header {
   
   .content-text p {
     font-size: 1rem;
-    color: #333; /* Neutral text color */
+    color: #ef601e
   }
   
   /* Adjust for Mobile (default behavior) */
@@ -376,5 +376,74 @@ header {
       margin-bottom: 0; /* Remove bottom margin for side-by-side layout */
     }
   }
-  
-  
+ /* Coming Soon Section */
+.coming-soon-section {
+    margin-top: 60px; /* Increased space above the section */
+    text-align: center;
+}
+
+.coming-soon-section h2 {
+    font-size: 2rem; /* Slightly larger text for the heading */
+    margin-bottom: 30px; /* Add more space below the heading */
+    color: var(--text-color);
+}
+
+/* Gallery styles */
+.coming-soon-gallery {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping on mobile */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 10px; /* Adjusted space between images */
+    padding: 10px;
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+.coming-soon-section {
+    background-color: #fcebc5; /* A light gray background */
+    padding: 40px 0; /* Add padding for breathing room */
+    border-radius: 12px; /* Rounded corners for the section */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for a modern look */
+}
+.coming-soon-gallery img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+    transition: all 0.3s ease-in-out; /* Smooth animation */
+}
+.coming-soon-gallery img {
+    height: 260px; /* Increased image size for mobile */
+    width: auto;
+    border-radius: 8px; /* Rounded corners */
+    object-fit: cover;
+    flex-shrink: 0; /* Prevent images from shrinking */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: add a shadow */
+}
+
+/* Wide screen styles */
+@media (min-width: 768px) {
+    .coming-soon-gallery {
+        display: grid; /* Switch to a grid layout */
+        grid-template-columns: repeat(4, 1fr); /* 4 columns for 4 images */
+        gap: 20px; /* Add a bit more space between images */
+        overflow: visible; /* Disable scrolling */
+        justify-content: center;
+        margin: 0 auto; /* Center the gallery */
+        max-width: 85%; /* Keep the gallery constrained to avoid edge crowding */
+    }
+
+    .coming-soon-gallery img {
+        height: 300px; /* Larger images for wide screens */
+    }
+}
+.coming-soon-section h2 {
+    font-size: 2.5rem; /* Larger heading */
+    font-weight: 700; /* Bold text */
+    color: #ef601e; /* Match the orange theme */
+    text-transform: uppercase;
+    letter-spacing: 1.5px; /* Spacing for a modern feel */
+    margin-bottom: 20px;
+}
+@media (min-width: 1024px) {
+    .coming-soon-gallery {
+        max-width: 80%; /* Further constrain gallery width */
+    }
+}
