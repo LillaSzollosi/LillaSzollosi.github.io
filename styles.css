@@ -643,17 +643,38 @@ main {
 
     .footer-email {
         font-size: 0.8rem; /* Slightly smaller email font */
-        text-align: center; /* Center the email text */
+        text-align: right; /* Align email text to the right */
         margin-bottom: 10px; /* Space between email and social icons */
+        width: 100%; /* Ensure email takes up the full width */
+        display: flex;
+        justify-content: flex-end; /* Align email to the right */
     }
 
     .social-icons {
         gap: 12px; /* Increase space between social icons */
         justify-content: center; /* Center the icons horizontally */
+        width: 100%; /* Ensure icons are centered */
     }
 
     .social-icon {
         max-width: 18px; /* Reduce the social icons further */
+    }
+
+    /* Adjust layout for left-side logo, right-side email, and below them social links */
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .footer-right {
+        align-self: flex-end; /* Align email to the right */
+        margin-top: 10px; /* Space between logo and email */
+    }
+
+    .social-icons {
+        align-self: center; /* Center social icons below email */
     }
 }
 
