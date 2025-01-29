@@ -509,23 +509,23 @@ header {
     align-items: center;
     margin-top: 80px; /* Space from the header */
     padding: 0 20px; /* Padding for spacing */
+    overflow: hidden; /* Prevent horizontal overflow */
 }
 
 .tulossa-image {
-    max-width: 100%; /* Prevent stretching beyond container */
-    height: auto; /* Keep the image's aspect ratio */
-    /* Removed any borders or shadow */
+    max-width: 100%; /* Make the image fit within the container */
+    height: auto; /* Maintain aspect ratio */
 }
 
 /* Adjust image on mobile */
 @media (max-width: 767px) {
     .tulossa-section {
-        padding: 0 20px; /* Ensure padding on mobile to avoid edges */
+        padding: 0 10px; /* Adjust padding on mobile to prevent overflow */
         margin-top: 100px; /* Add more space from header */
     }
 
     .tulossa-image {
-        max-width: 100%; /* Fit the image properly within the screen */
+        width: 100%; /* Ensure the image takes the full width of the container */
         height: auto; /* Maintain aspect ratio */
         margin-bottom: 15px; /* Space below the image */
     }
