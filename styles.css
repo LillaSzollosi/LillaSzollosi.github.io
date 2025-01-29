@@ -317,33 +317,46 @@ header {
     gap: 20px;
     margin: 40px auto; /* Spacing from the section above */
     justify-content: space-between;
-  }
-  
-  .content-section > div {
+}
+
+.content-section > div {
     flex: 1 1 calc(50% - 20px); /* Two sections per row */
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-  }
-  
-  .content-image {
+}
+
+.content-image {
     max-width: 100%;
     height: auto;
     border-radius: 10px; /* Rounded corners for images */
     margin-bottom: 15px;
-  }
-  
-  .content-text h2 {
+}
+
+.content-text h2 {
     font-size: 1.5rem;
     margin-bottom: 10px;
     color: #ef601e; /* Use your primary color */
-  }
-  
-  .content-text p {
+}
+
+.content-text p {
     font-size: 1rem;
-    color: #ef601e
-  }
+    line-height: 1.8; /* Similar line-height as in Uutiset section */
+    color: #ef601e; /* Standard color for paragraphs (darkened for contrast) */
+    text-align: justify; /* Justify text to match Uutiset section */
+    margin-bottom: 15px; /* Add space between paragraphs */
+}
+
+/* Paragraph Styling for Content Article (to match Uutiset section) */
+.content-article p {
+    font-size: 1rem;
+    line-height: 1.8; /* Improve readability */
+    text-align: justify; /* Justify the text */
+    color: #ef601e; /* Standard color for paragraphs */
+    margin-bottom: 15px; /* Add spacing between paragraphs */
+}
+
   
   /* Adjust for Mobile (default behavior) */
   @media (max-width: 767px) {
@@ -446,4 +459,50 @@ header {
     .coming-soon-gallery {
         max-width: 80%; /* Further constrain gallery width */
     }
+}
+/* Uutiset Section */
+.uutiset-section {
+    background-color: #fdf3dd; /* Background color */
+    padding: 40px 20px; /* Add spacing around */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    margin-top: 40px; /* Space above the section */
+    margin: 50px auto; /* Center the section */
+    max-width: 800px; /* Contain the width */
+}
+
+/* Uutiset Section Heading */
+.uutiset-section h2 {
+    font-size: 2.5rem; /* Large, bold heading */
+    color: #ef601e; /* Match the theme color */
+    text-align: center; /* Center the heading */
+    margin-bottom: 20px;
+}
+
+/* Uutiset Article */
+.uutiset-article {
+    max-width: 800px; /* Constrain width for readability */
+    margin: 0 auto; /* Center the content */
+    text-align: left; /* Align text to the left */
+    line-height: 1.6; /* Improve readability */
+    color: #333; /* Standard text color */
+}
+
+/* Address Styling */
+.uutiset-article address {
+    font-style: normal; /* Make address text match the style */
+    font-weight: bold; /* Bold to highlight */
+    font-size: 1.5rem; /* Larger than the body text */
+    color: #ef601e; /* Highlight with theme color */
+    margin-bottom: 15px; /* Space below the address */
+    display: block; /* Display as block element */
+}
+
+/* Paragraph Styling */
+.uutiset-article p {
+    font-size: 1rem;
+    line-height: 1.8; /* Improve readability */
+    text-align: justify; /* Justify the text */
+    color: #ef601e; /* Standard color for paragraphs */
+    margin-bottom: 15px; /* Add spacing between paragraphs */
 }
