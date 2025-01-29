@@ -319,12 +319,6 @@ header {
     justify-content: space-between;
 }
 
-@media (max-width: 767px) {
-    .content-text {
-        padding: 10px; /* Less padding on mobile to avoid excessive space */
-        margin: 10px;  /* Add margin to give space around the section */
-    }
-}
 .content-section > div {
     flex: 1 1 calc(50% - 20px); /* Two sections per row */
     display: flex;
@@ -354,47 +348,43 @@ header {
     margin-bottom: 15px; /* Add space between paragraphs */
 }
 
-/* Paragraph Styling for Content Article (to match Uutiset section) */
-.content-article p {
-    font-size: 1rem;
-    line-height: 1.8; /* Improve readability */
-    text-align: justify; /* Justify the text */
-    color: #ef601e; /* Standard color for paragraphs */
-    margin-bottom: 15px; /* Add spacing between paragraphs */
+/* Adjust for Mobile (default behavior) */
+@media (max-width: 767px) {
+    .content-section > div {
+        flex: 1 1 100%; /* Stack items vertically */
+        text-align: center; /* Center align text and images */
+        padding: 10px; /* Add padding to ensure spacing from the edges */
+    }
+
+    .content-image {
+        max-width: 90%; /* Make the image slightly smaller on mobile */
+        margin-bottom: 15px; /* Keep some space below the image */
+    }
+
+    .content-text {
+        padding: 0 10px; /* Add padding to text container on mobile */
+    }
 }
 
-  
-  /* Adjust for Mobile (default behavior) */
-  @media (max-width: 767px) {
+/* Adjust for Widescreen */
+@media (min-width: 768px) {
     .content-section > div {
-      flex: 1 1 100%; /* Stack items vertically */
-      text-align: center; /* Center align text and images */
+        flex-direction: row; /* Display image and text side by side */
+        text-align: left; /* Align text to the left */
+        gap: 20px; /* Add space between image and text */
     }
-  
-    .content-image {
-      max-width: 90%; /* Smaller images on mobile */
-    }
-  }
-  
-  /* Adjust for Widescreen */
-  @media (min-width: 768px) {
-    .content-section > div {
-      flex-direction: row; /* Display image and text side by side */
-      text-align: left; /* Align text to the left */
-      gap: 20px; /* Add space between image and text */
-    }
-  
+
     .content-text {
-      flex: 1;
-      padding: 0 15px;
+        flex: 1;
+        padding: 0 15px;
     }
-  
+
     .content-image {
-      flex: 1;
-      max-width: 100%; /* Prevent image stretching */
-      margin-bottom: 0; /* Remove bottom margin for side-by-side layout */
+        flex: 1;
+        max-width: 100%; /* Prevent image stretching */
+        margin-bottom: 0; /* Remove bottom margin for side-by-side layout */
     }
-  }
+}
  /* Coming Soon Section */
 .coming-soon-section {
     margin-top: 60px; /* Increased space above the section */
