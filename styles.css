@@ -521,15 +521,12 @@ header {
 @media (max-width: 767px) {
     .tulossa-section {
         padding: 0 10px; /* Adjust padding on mobile to prevent overflow */
-        margin-top: 100px; /* Add more space from header */
+        margin-top: 120px; /* Add more space from header */
     }
 
     .tulossa-image {
-        width: 100%; /* Ensure the image takes the full width of the container */
+        width: 80%; /* Reduce image size on mobile */
         height: auto; /* Maintain aspect ratio */
         margin-bottom: 15px; /* Space below the image */
     }
 }
-
-
-
