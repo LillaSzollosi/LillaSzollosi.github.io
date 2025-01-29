@@ -636,23 +636,24 @@ main {
     }
 
     .footer-logo {
-        max-width: 40px; /* Make the logo a bit smaller on mobile */
-        margin-bottom: 10px; /* Space between logo and the text */
+        max-width: 30px; /* Reduce the logo size even more on mobile */
+        height: auto;
+        margin-bottom: 10px; /* Space between logo and other content */
     }
 
     .footer-email {
         font-size: 0.8rem; /* Slightly smaller email font */
-        text-align: center; /* Center the email on mobile */
+        text-align: center; /* Center the email text */
         margin-bottom: 10px; /* Space between email and social icons */
     }
 
     .social-icons {
-        gap: 15px; /* Increase the gap between social icons */
+        gap: 12px; /* Increase space between social icons */
         justify-content: center; /* Center the icons horizontally */
     }
 
     .social-icon {
-        max-width: 25px; /* Make the icons a bit bigger for mobile */
+        max-width: 18px; /* Reduce the social icons further */
     }
 }
 
