@@ -408,7 +408,7 @@ header {
 }
 
 .coming-soon-section {
-    background-color: #fcebc5; /* A light gray background */
+    background-color: #fcebc5; 
     padding: 40px 0; /* Add padding for breathing room */
     border-radius: 12px; /* Rounded corners for the section */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for a modern look */
@@ -502,3 +502,31 @@ header {
     color: #ef601e; /* Standard color for paragraphs */
     margin-bottom: 15px; /* Add spacing between paragraphs */
 }
+/* Tulossa Image Section */
+.tulossa-section {
+    display: flex;
+    justify-content: center; /* Center image on widescreen */
+    align-items: center;
+    margin-top: 80px; /* Increase space above the image to move it further away from the header */
+    padding: 0 20px; /* Add padding to avoid image sticking to the edges */
+}
+
+.tulossa-image {
+    max-width: 100%; /* Ensure the image doesn't stretch beyond its container */
+    height: auto; /* Maintain aspect ratio */
+    /* Removed border and shadow to match your request */
+}
+
+/* Adjust image on mobile */
+@media (max-width: 767px) {
+    .tulossa-section {
+        padding: 0 10px; /* Less padding on mobile */
+    }
+
+    .tulossa-image {
+        max-width: 90%; /* Adjust the image size to be slightly smaller on mobile */
+        margin-bottom: 15px; /* Space below the image */
+    }
+}
+
+
