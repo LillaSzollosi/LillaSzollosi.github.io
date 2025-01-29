@@ -637,7 +637,7 @@ main {
     }
 
     .footer-logo {
-        max-width: 30px; /* Smaller logo on mobile */
+        max-width: 60px; /* Smaller logo on mobile */
         margin-right: 10px; /* Space between logo and email */
     }
 
