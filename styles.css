@@ -636,10 +636,11 @@ main {
         width: 100%;
     }
 
-    .footer-logo {
-        max-width: 50px; /* Smaller logo on mobile */
-        margin-right: 10px; /* Space between logo and email */
-    }
+   .footer-logo {
+    max-width: 60px; /* Adjust the logo size for mobile */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between logo and email */
+}
 
     .footer-email {
         font-size: 0.8rem; /* Slightly smaller email font */
