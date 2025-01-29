@@ -319,6 +319,12 @@ header {
     justify-content: space-between;
 }
 
+@media (max-width: 767px) {
+    .content-text {
+        padding: 10px; /* Less padding on mobile to avoid excessive space */
+        margin: 10px;  /* Add margin to give space around the section */
+    }
+}
 .content-section > div {
     flex: 1 1 calc(50% - 20px); /* Two sections per row */
     display: flex;
