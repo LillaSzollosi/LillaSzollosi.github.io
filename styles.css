@@ -564,6 +564,19 @@ main {
     width: 100%;
     margin-top: auto; /* Push the footer to the bottom */
 }
+/* General Styling for Footer Section */
+.site-footer {
+    background-color: #fdf3dd; /* Footer background color */
+    border-top: 2px solid #ef601e; /* Thin top border */
+    padding: 10px 20px;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow above footer */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Keep it inside the content flow */
+    width: 100%;
+    margin-top: auto; /* Push the footer to the bottom */
+}
 
 /* Footer Content */
 .footer-content {
@@ -604,6 +617,75 @@ main {
     transition: transform 0.2s ease; /* Add a hover effect */
 }
 
+.social-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge icon on hover */
+}
+
+/* Make the footer more mobile-friendly */
+@media (max-width: 767px) {
+    .site-footer {
+        flex-direction: column; /* Stack the footer items vertically */
+        align-items: center; /* Center all content */
+        padding: 20px; /* Increase padding for better spacing on mobile */
+    }
+
+    .footer-content {
+        flex-direction: column; /* Stack the logo and right section vertically */
+        align-items: center;
+        width: 100%; /* Ensure it spans the entire width */
+    }
+
+    .footer-logo {
+        max-width: 40px; /* Make the logo a bit smaller on mobile */
+        margin-bottom: 10px; /* Space between logo and the text */
+    }
+
+    .footer-email {
+        font-size: 0.8rem; /* Slightly smaller email font */
+        text-align: center; /* Center the email on mobile */
+        margin-bottom: 10px; /* Space between email and social icons */
+    }
+
+    .social-icons {
+        gap: 15px; /* Increase the gap between social icons */
+        justify-content: center; /* Center the icons horizontally */
+    }
+
+    .social-icon {
+        max-width: 25px; /* Make the icons a bit bigger for mobile */
+    }
+}
+
+/* For Tablets or Larger Screens: Keep the desktop layout */
+@media (min-width: 768px) {
+    .site-footer {
+        flex-direction: row; /* Footer items should be side-by-side on larger screens */
+        padding: 10px 20px;
+    }
+
+    .footer-content {
+        flex-direction: row; /* Keep footer items side by side */
+        align-items: center;
+    }
+
+    .footer-logo {
+        max-width: 50px; /* Keep logo size consistent */
+    }
+
+    .footer-email {
+        font-size: 0.9rem;
+        text-align: right; /* Align email text to the right */
+        margin: 0;
+    }
+
+    .social-icons {
+        gap: 10px; /* Space between icons */
+    }
+
+    .social-icon {
+        max-width: 20px; /* Set icon size */
+    }
+}
 .social-icon:hover {
     transform: scale(1.1); /* Slightly enlarge icon on hover */
 }
