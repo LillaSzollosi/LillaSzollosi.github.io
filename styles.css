@@ -505,28 +505,31 @@ header {
 /* Tulossa Image Section */
 .tulossa-section {
     display: flex;
-    justify-content: center; /* Center image on widescreen */
+    justify-content: center; /* Center the image on widescreen */
     align-items: center;
-    margin-top: 80px; /* Increase space above the image to move it further away from the header */
-    padding: 0 20px; /* Add padding to avoid image sticking to the edges */
+    margin-top: 80px; /* Space from the header */
+    padding: 0 20px; /* Padding for spacing */
 }
 
 .tulossa-image {
-    max-width: 100%; /* Ensure the image doesn't stretch beyond its container */
-    height: auto; /* Maintain aspect ratio */
-    /* Removed border and shadow to match your request */
+    max-width: 100%; /* Prevent stretching beyond container */
+    height: auto; /* Keep the image's aspect ratio */
+    /* Removed any borders or shadow */
 }
 
 /* Adjust image on mobile */
 @media (max-width: 767px) {
     .tulossa-section {
-        padding: 0 10px; /* Less padding on mobile */
+        padding: 0 20px; /* Ensure padding on mobile to avoid edges */
+        margin-top: 100px; /* Add more space from header */
     }
 
     .tulossa-image {
-        max-width: 90%; /* Adjust the image size to be slightly smaller on mobile */
+        max-width: 100%; /* Fit the image properly within the screen */
+        height: auto; /* Maintain aspect ratio */
         margin-bottom: 15px; /* Space below the image */
     }
 }
+
 
 
