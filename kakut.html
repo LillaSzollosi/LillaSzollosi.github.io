@@ -49,29 +49,34 @@
             <div class="kakku-item">
                 <img src="https://github.com/LillaSzollosi/LillaSzollosi.github.io/blob/main/Porkkanakakku.jpg?raw=true" alt="Porkkanakakku" class="kakku-image">
                 <p class="kakku-title">Porkkanakakku</p>
-                <a href="#" class="recipe-link">Vie reseptiin</a>
+                <button class="recipe-link" onclick="openModal('Porkkanakakku', 'Full recipe content for Porkkanakakku...')">Vie reseptiin</button>
             </div>
-            
             <div class="kakku-item">
                 <img src="https://github.com/LillaSzollosi/LillaSzollosi.github.io/blob/main/Oreo%20Juustokakku.jpg?raw=true" alt="Oreo Juustokakku" class="kakku-image">
                 <p class="kakku-title">Oreo Juustokakku</p>
-                <a href="#" class="recipe-link">Vie reseptiin</a>
+                <button class="recipe-link" onclick="openModal('Oreo Juustokakku', 'Full recipe content for Oreo Juustokakku...')">Vie reseptiin</button>
             </div>
-            
             <div class="kakku-item">
                 <img src="https://github.com/LillaSzollosi/LillaSzollosi.github.io/blob/main/Bundt-kakku.jpg?raw=true" alt="Bundt-kakku" class="kakku-image">
                 <p class="kakku-title">Bundt-kakku</p>
-                <a href="#" class="recipe-link">Vie reseptiin</a>
+                <button class="recipe-link" onclick="openModal('Bundt-kakku', 'Full recipe content for Bundt-kakku...')">Vie reseptiin</button>
             </div>
-            
             <div class="kakku-item">
                 <img src="https://github.com/LillaSzollosi/LillaSzollosi.github.io/blob/main/Red%20Velvet-Kakku.jpg?raw=true" alt="Red Velvet-kakku" class="kakku-image">
                 <p class="kakku-title">Red Velvet-kakku</p>
-                <a href="#" class="recipe-link">Vie reseptiin</a>
+                <button class="recipe-link" onclick="openModal('Red Velvet-kakku', 'Full recipe content for Red Velvet-kakku...')">Vie reseptiin</button>
             </div>
         </section>
-    </main>
     
+        <!-- Modal for displaying full recipe -->
+        <div id="recipeModal" class="modal">
+            <div class="modal-content">
+                <span id="closeModal" class="close-button">&times;</span>
+                <h3 id="modalTitle"></h3>
+                <p id="modalContent"></p>
+            </div>
+        </div>
+    </main>  
     
    <!-- Footer Section -->
    <footer class="site-footer">
@@ -112,7 +117,29 @@
     </div>
 </footer>
 </body>
-</html>  
+</html>
+
+<script>
+// Function to open the modal with content
+function openModal(title, content) {
+    document.getElementById('modalTitle').innerText = title;
+    document.getElementById('modalContent').innerText = content;
+    document.getElementById('recipeModal').style.display = 'flex'; // Show the modal
+}
+
+// Close the modal when the close button is clicked
+document.getElementById('closeModal').addEventListener('click', function() {
+    document.getElementById('recipeModal').style.display = 'none'; // Hide the modal
+});
+
+// Close the modal if the user clicks outside the modal content
+window.onclick = function(event) {
+    if (event.target === document.getElementById('recipeModal')) {
+        document.getElementById('recipeModal').style.display = 'none'; // Hide the modal
+    }
+}
+   
+</script> 
     <script src="script.js"></script>
 </body>
 </html>
