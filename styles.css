@@ -701,3 +701,188 @@ footer {
     position: relative;
     margin-top: auto; /* Push footer to the bottom */
 }
+
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Resepti Section Styling */
+.resepti-section {
+    max-width: 800px;
+    margin: 80px auto; /* Increased margin for space below the header */
+    padding: 20px;
+    background-color: #fdf3dd;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.resepti-header {
+    font-size: 2rem;
+    color: #ef601e;
+    margin-bottom: 20px;
+}
+
+.resepti-paragraph {
+    font-size: 1rem;
+    color: #ef601e;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Form Styling */
+.resepti-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+}
+
+.form-label {
+    font-size: 1rem;
+    color: #333;
+    text-align: left;
+}
+
+.form-input,
+.form-textarea,
+.form-file {
+    font-size: 1rem;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-file:focus {
+    border-color: #ef601e;
+    box-shadow: 0 0 5px rgba(239, 96, 30, 0.5);
+}
+
+.form-textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-file {
+    padding: 5px; /* Adjust padding for file input */
+    cursor: pointer;
+}
+
+.form-submit {
+    font-size: 1rem;
+    background-color: #ef601e;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-submit:hover {
+    background-color: #d5541b;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    .resepti-section {
+        padding: 15px;
+    }
+
+    .resepti-header {
+        font-size: 1.8rem;
+    }
+
+    .resepti-paragraph {
+        font-size: 0.95rem;
+    }
+
+    .form-input,
+    .form-textarea,
+    .form-file {
+        font-size: 0.95rem;
+    }
+
+    .form-submit {
+        font-size: 0.95rem;
+        padding: 8px;
+    }
+}
+/* General Styling for Messages */
+.message-section {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #fdf3dd; /* Light background for messages section */
+    border-top: 2px solid #ef601e;
+}
+
+.message-header {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #ef601e;
+    text-align: center;
+}
+
+.message-container {
+    max-height: 400px; /* Set the max height for scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 20px;
+}
+  
+  .message {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .message img {
+    max-width: 80px; /* Constrain the size for a small image */
+    max-height: 80px; /* Constrain height */
+    object-fit: cover; /* Prevent distortion while ensuring the image fits the box */
+    margin-right: 15px; /* Spacing between image and text */
+    cursor: pointer; /* Indicate clickability */
+    border-radius: 8px; /* Rounded corners for a polished look */
+}  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+.delete-button {
+    background-color: #ef601e;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: #d14f18;
+}
+.message-image {
+    max-width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 10px; /* Add spacing above the image */
+    border-radius: 10px; /* Optional: Rounded corners for a polished look */
+  }

@@ -43,7 +43,35 @@
             </ul>
         </nav>
     </header>
-   
+
+    <main>
+        <section class="resepti-section">
+            <h1 class="resepti-header">Lähetä Resepti</h1>
+            <p class="resepti-paragraph">
+                Jaa suosikkireseptisi kanssamme ja liity yhteisöömme! Joka kuukaudessa
+                valitsen yhden teidän reseptistä ja julkaisen sen sivulla sinun nimellä.
+            </p>
+            <form id="reseptiForm" class="resepti-form">
+                <label for="title" class="form-label">Reseptin nimi</label>
+                <input type="text" id="title" name="title" placeholder="Kirjoita reseptin nimi" class="form-input" required>
+                
+                <label for="message" class="form-label">Resepti</label>
+                <textarea id="message" name="message" placeholder="Kirjoita resepti" class="form-textarea" required></textarea>
+                
+                <label for="image" class="form-label">Liitä kuva (valinnainen)</label>
+                <input type="file" id="image" name="image" accept="image/*" class="form-file">
+                
+                <button type="submit" class="form-submit">Lähetä</button>
+            </form>
+        </section>
+    
+        <div class="message-section">
+            <div id="messageContainer" class="message-container">
+                <!-- Messages will dynamically populate here -->
+            </div>
+        </div>
+    </main>
+
     <!-- Footer Section -->
    <footer class="site-footer">
     <div class="footer-content">
@@ -82,6 +110,134 @@
         </div>
     </div>
 </footer>
+
+<script>
+// Get references to the form and message container
+const form = document.getElementById("reseptiForm");
+const messageContainer = document.getElementById("messageContainer");
+
+// Load the saved messages from localStorage (if any)
+const savedMessages = JSON.parse(localStorage.getItem("messages")) || [];
+
+// Function to render messages from storage
+function renderMessages() {
+    messageContainer.innerHTML = ""; // Clear the container
+    savedMessages.forEach(function (messageData) {
+        const messageElement = document.createElement("div");
+        messageElement.classList.add("message");
+        
+        // Create an image element if there's an image
+        const imgElement = document.createElement("img");
+        if (messageData.image) {
+            imgElement.src = messageData.image;  // Use base64 image string
+            imgElement.alt = "Message Image";
+            imgElement.classList.add("message-img"); // For styling
+        } else {
+            imgElement.style.display = "none"; // Hide image if not available
+        }
+
+        // Create the text content for the message
+        const contentElement = document.createElement("div");
+        contentElement.classList.add("message-content");
+        
+        const titleElement = document.createElement("h4");
+        titleElement.classList.add("message-title");
+        titleElement.textContent = messageData.title;
+        
+        const messageTextElement = document.createElement("p");
+        messageTextElement.classList.add("message-text");
+        messageTextElement.textContent = messageData.message;
+        
+        // Create the delete button
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Poista";
+        deleteButton.classList.add("delete-button");
+        deleteButton.addEventListener("click", function () {
+            // Remove the message from localStorage and the DOM
+            const index = savedMessages.indexOf(messageData);
+            if (index > -1) {
+                savedMessages.splice(index, 1); // Remove message from the array
+                localStorage.setItem("messages", JSON.stringify(savedMessages)); // Update localStorage
+                renderMessages(); // Re-render the messages
+            }
+        });
+
+        // Append the delete button to the content
+        contentElement.appendChild(titleElement);
+        contentElement.appendChild(messageTextElement);
+        contentElement.appendChild(deleteButton);
+        
+        // Append the image and content to the message
+        messageElement.appendChild(imgElement);
+        messageElement.appendChild(contentElement);
+        
+        // Append the new message to the message container
+        messageContainer.appendChild(messageElement);
+    });
+}
+
+// Initial rendering of messages
+renderMessages();
+
+// Handle form submission
+form.addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent the form from submitting the traditional way
+    
+    // Get the form values
+    const title = document.getElementById("title").value;
+    const message = document.getElementById("message").value;
+    const imageFile = document.getElementById("image").files[0];
+    
+    let imageBase64 = null;
+    
+    // If there's an image file, convert it to a base64 string
+    if (imageFile) {
+        const reader = new FileReader();
+        reader.onloadend = function () {
+            imageBase64 = reader.result;  // This will contain the base64 string of the image
+            
+            // Create a new message object with the base64 image
+            const newMessage = {
+                title: title,
+                message: message,
+                image: imageBase64,
+            };
+
+            // Add the new message to the savedMessages array
+            savedMessages.push(newMessage);
+            
+            // Update localStorage with the new messages array
+            localStorage.setItem("messages", JSON.stringify(savedMessages));
+            
+            // Re-render the messages
+            renderMessages();
+            
+            // Clear form inputs
+            form.reset();
+        };
+        reader.readAsDataURL(imageFile);  // Read the image file as base64
+    } else {
+        // If no image, just store the message
+        const newMessage = {
+            title: title,
+            message: message,
+            image: null,
+        };
+
+        // Add the new message to the savedMessages array
+        savedMessages.push(newMessage);
+        
+        // Update localStorage with the new messages array
+        localStorage.setItem("messages", JSON.stringify(savedMessages));
+        
+        // Re-render the messages
+        renderMessages();
+        
+        // Clear form inputs
+        form.reset();
+    }
+});
+  </script>
 
     <script src="script.js"></script>
 </body>
