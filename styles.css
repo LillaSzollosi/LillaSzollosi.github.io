@@ -939,7 +939,7 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
 }
 
-/* Responsive Styles */
+/* Responsive Styles for larger screens */
 @media (min-width: 768px) {
     .kakku-item {
         width: calc(25% - 20px); /* 4 items per row on wide screen */
@@ -948,10 +948,13 @@ body {
 
 /* Responsive Styles for mobile */
 @media (max-width: 767px) {
-    .kakku-gallery {
-        grid-template-columns: repeat(2, 1fr); /* Two items per row on mobile */
+    .kakut-section {
+        justify-content: space-between; /* Ensure items are spaced out evenly on small screens */
     }
     .kakku-item {
         width: calc(50% - 10px); /* 50% width with some space between */
+    }
+    .kakku-image {
+        max-width: 100%; /* Make the image responsive */
     }
 }
