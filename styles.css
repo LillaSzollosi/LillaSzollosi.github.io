@@ -948,6 +948,6 @@ body {
 
 @media (max-width: 767px) {
     .kakku-item {
-        width: 100%; /* Stack items on smaller screens */
+        width: calc(50% - 10px); /* Two items per row with a bit of space between */
     }
 }
