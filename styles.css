@@ -951,3 +951,7 @@ body {
         width: calc(50% - 10px); /* Two items per row with a bit of space between */
     }
 }
+.kakku-item img {
+    margin: 0 5px; 
+    border-radius: 10px; 
+}
