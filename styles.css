@@ -1033,3 +1033,32 @@ body {
         width: 90%; /* Make it a bit smaller on mobile */
     }
 }
+/* Recipe Modal Styling */
+.modal-content {
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+    border-radius: 8px;
+    background-color: #fcebc5;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    text-align: left; /* Align text to the left */
+}
+
+/* Style for the Ingredients and Instructions list */
+h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #ef601e;
+}
+
+ul, ol {
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+/* Adjust the list items to ensure left-alignment */
+li {
+    margin-bottom: 8px;
+}

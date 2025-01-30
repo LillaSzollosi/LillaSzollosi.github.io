@@ -68,14 +68,14 @@
             </div>
         </section>
     
-        <!-- Modal for displaying full recipe -->
-        <div id="recipeModal" class="modal">
-            <div class="modal-content">
-                <span id="closeModal" class="close-button">&times;</span>
-                <h3 id="modalTitle"></h3>
-                <p id="modalContent"></p>
-            </div>
-        </div>
+<!-- Modal for displaying full recipe -->
+<div id="recipeModal" class="modal">
+    <div class="modal-content">
+        <span id="closeModal" class="close-button">&times;</span>
+        <h3 id="modalTitle"></h3>
+        <div id="modalContent"></div>
+    </div>
+</div>
     </main>  
     
    <!-- Footer Section -->
@@ -121,6 +121,9 @@
 
 <script>
 // Function to open the modal with content
+const LABEL_INGREDIENTS = "Ainesosat";  // Change to Ainesosat
+const LABEL_INSTRUCTIONS = "Ohje";     // Change to Ohje
+
 function openModal(title, content) {
     document.getElementById('modalTitle').innerText = title;
     document.getElementById('modalContent').innerText = content;
@@ -137,6 +140,137 @@ window.onclick = function(event) {
     if (event.target === document.getElementById('recipeModal')) {
         document.getElementById('recipeModal').style.display = 'none'; // Hide the modal
     }
+}
+function openModal(title) {
+    const modalTitle = document.getElementById('modalTitle');
+    const modalContent = document.getElementById('modalContent');
+    const recipeData = getRecipeData(title); // Get recipe based on title
+
+    // Check if recipe exists
+    if (recipeData) {
+        modalTitle.textContent = recipeData.title;
+        modalContent.innerHTML = `
+            <h4>${LABEL_INGREDIENTS}:</h4> <!-- Use the variable for Ingredients -->
+            <ul>
+                ${recipeData.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
+            </ul>
+            <h4>${LABEL_INSTRUCTIONS}:</h4> <!-- Use the variable for Instructions -->
+            <ol>
+                ${recipeData.instructions.map(instruction => `<li>${instruction}</li>`).join('')}
+            </ol>
+        `;
+
+        // Show modal
+        const modal = document.getElementById('recipeModal');
+        modal.style.display = 'flex';
+
+        // Close modal when the close button is clicked
+        document.getElementById('closeModal').onclick = function () {
+            modal.style.display = 'none';
+        }
+
+        // Close modal when clicking outside of the modal content
+        window.onclick = function (event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    } else {
+        console.error('Recipe not found!');
+    }
+}
+
+// Function to get the recipe data based on the title
+function getRecipeData(title) {
+    const recipes = {
+        'Oreo Juustokakku': {
+            title: 'Oreo Juustokakku',
+            ingredients: [
+                '150g Oreoa',
+                '60g voita',
+                '2dl vispikermaa',
+                '180g Pirkka vaniljatuorejuustoa',
+                '1/4dl sokeria',
+            ],
+            instructions: [
+                'Erottele kekseistä täyte ja keksit eri kulhoihin. Laita 1/3 kekseistä sivuun myöhempää käyttöä varten.',
+                'Hienonna keksit (2/3) monitoimikoneessa. Sekoita joukkoon sulatettu rasva. Painele seos leivinpaperilla vuoratun irtopohjavuoan (⌀ 20 cm) pohjalle.',
+                'Pane liivatelehti pehmenemään kylmään veteen noin 10 minuutiksi. Vatkaa 1 1/2 dl kermaa vaahdoksi.',
+                'Sekoita yksi purkillinen vaniljatuorejuustoa keksitäytteiden kanssa sähkövatkaimella sekoittaen. Sekoita joukkoon loput tuorejuustot.',
+                'Kiehauta loput kermat ja sokeri kattilassa ja nosta kattila pois liedeltä. Purista liivatelehti kuivaksi ja lisää kuumaan kermaan. ',
+                'Hienonna loput keksit (1/3) monitoimikoneessa hienoksi hiekaksi. Ripottele keksihiekka tasaisesti tuorejuustotäyteen päälle.'
+            ]
+        },
+        'Porkkanakakku': {
+            title: 'Porkkanakakku',
+            ingredients: [
+                '200g porkkanaa',
+                '2 dl sokeria',
+                '2,5 dl maitoa',
+                '1 dl rypsiöljyä',
+                '300 g vehnäjauhoja',
+                '2 tl leivinjauhetta',
+                '1 tl ruokasoodaa, 1 rkl inkivääriä, 1tl kanelia'
+            ],
+            instructions: [
+                'Raasta porkkanat hienoksi. Sekoita porkkanaraasteen joukkoon sokerit, maito, rypsiöljy.',
+                'Sekoita sen jälkeen kuivat aineet joukkoon.',
+                'Vuoraa n. 22 cm irtopohjavuoka leivinpaperilla ja voitele reunat. Kaada taikina vuokaan.',
+                'Paista kakkua 180 asteessa n. 1 tunti.',
+                'Anna kakun jäähtyä.',
+            ]
+        },
+        'Bundt-kakku': {
+            title: 'Bundt-kakku',
+            ingredients: [
+                '150 g margariinia',
+                '320 g leivonnaisia jauhoja',
+                '3 munat',
+                '10 g leivinjauhetta',
+                '175 g sokeria',
+                '100 g hunajaa',
+                '100 g maitoa'
+            ],
+            instructions: [
+                'Esikuumennamme uunin 180 °: seen. Laitetaan maito lasiin, lisätään etikka ja annetaan sen levätä.',
+                'Sulatetaan margariini. Lisää sokeria, vaniljasokeria ja m3 munaa.',
+                'Lisätään hunaja ja maito.',
+                'Lisää jauhot.',
+                'Kaadetaan seos niputettuun kakkumuottiin, joka on voideltu margariinilla tai öljyllä.',
+                'Paistetaan 45 minuuttia 180 °:ssa, tai kunnes hammastikku tarttuu keskelle, tulee puhtaaksi.'
+            ]
+        } ,
+        'Red Velvet-kakku': {
+            title: 'Red Velvet-kakku',
+            ingredients: [
+                '5dl vehnäjauhoja',
+                '4dl sokeria',
+                '3 rkl kaakaojauhetta',
+                '125g voita',
+                '1tl leivinjauhetta ja ruokasooda',
+                '2 kananmunaa',
+                '2dl maitoa',
+                '2-3 tl punaista elintarvikeväriä',
+                '200g tuorejuustoa',
+                '200g mascarponejuustoa',
+                '2dl tomusokeria',
+                '2tl vaniljasokeria',
+                '2dl kuohukermaa',
+
+            ],
+            instructions: [
+                'Laita uuni lämpenemään 175 asteeseen. Voitele irtopohjavuoan (Ø 20 cm) reunat voilla ja pingota pohjalle leivinpaperi.',
+                'Siivilöi jauhot kulhoon. Siivilöi kaakao joukkoon ja lisää suola. Sekoita väriaine maitoon.',
+                'Vatkaa voi ja sokerit sähkövatkaimella. Lisää munat yksitellen koko ajan vatkaten. Lisää puolet jauhoseoksesta ja puolet nesteestä taikinaan. Sekoita huolellisesti. Lisää loput jauhot ja neste. Sekoita, kunnes taikina on tasaista.',
+                'Sekoita sooda valkoviinietikkaan ja kaada kuohuva seos taikinaan. Sekoita nopeasti. Kaada taikina vuokaan ja paista uunin keskitasossa 30-40 min. Tarkista kypsyys tikulla.',
+                'Nosta kakku uunista ritilälle ja anna jäähtyä noin 10 min. Kumoa kakku ja anna jäähtyä huoneenlämpöiseksi. Nosta jäähtynyt kakku peitettynä jääkaappiin ja anna levätä seuraavaan päivään. Näin kakun leikkaantuu paremmin, täyttäminen on helpompaa ja lopputulos on siistimpi.',
+                'Leikkaa kakku 3 levyksi. Valmista kuorrutus. Sekoita tuorejuusto ja mascarpone sähkövatkaimella. Siivilöi tomusokeri joukkoon ja sekoita. Lisää vaniljasokeri ja kerma ja vatkaa sähkövatkaimella, kunnes kuorrutus on sileää ja kuohkeaa.',
+                'Kokoa kakku. Nosta kakkulevy tarjoiluvadille ja levitä noin 1 dl kuorrutusta päälle. Täytä seuraava kerros samalla lailla. Nosta kolmas kakkulevy kanneksi. Jos tarjoat kakun samana päivänä, levitä kaikki loppu kuorrutus kakun päälle ja reunoille. Jos voit antaa kakun vetäytyä vielä seuraavaan päivään, kuorruta kakku vain ohuelti. Nosta kakku kuvulla peitettynä jääkaappiin ja säilytä loppu kuorrute tiiviissä rasiassa jääkaapissa. Levitä loppu kuorrute kakun päälle ja reunoille vasta juuri ennen tarjoamista.'
+            ]
+        }
+    };
+
+    return recipes[title]; // Return the recipe for the given title
 }
    
 </script> 
