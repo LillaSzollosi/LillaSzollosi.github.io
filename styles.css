@@ -946,12 +946,12 @@ body {
     }
 }
 
+/* Responsive Styles for mobile */
 @media (max-width: 767px) {
-    .kakku-item {
-        width: calc(50% - 10px); /* Two items per row with a bit of space between */
+    .kakku-gallery {
+        grid-template-columns: repeat(2, 1fr); /* Two items per row on mobile */
     }
-}
-.kakku-item img {
-    margin: 0 5px; 
-    border-radius: 10px; 
+    .kakku-item {
+        width: calc(50% - 10px); /* 50% width with some space between */
+    }
 }
