@@ -1062,3 +1062,10 @@ ul, ol {
 li {
     margin-bottom: 8px;
 }
+/* Scroll behavior for smaller screens */
+@media screen and (max-width: 600px) {
+    .modal-content {
+        max-height: 90vh;  /* Allow a little more space on smaller screens */
+        overflow-y: auto;  /* Make sure content scrolls if needed */
+    }
+}
