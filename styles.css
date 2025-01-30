@@ -958,7 +958,7 @@ body {
         justify-content: space-between; /* Ensure items are spaced out evenly on small screens */
     }
     .kakku-item {
-        width: calc(50% - 10px); /* 50% width with some space between */
+        width: calc(50% - 5px); /* 50% width with some space between */
     }
     .kakku-image {
         max-width: 100%; /* Make the image responsive */
