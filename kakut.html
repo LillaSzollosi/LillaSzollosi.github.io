@@ -120,27 +120,14 @@
 </html>
 
 <script>
-// Function to open the modal with content
+// Constants for labels
 const LABEL_INGREDIENTS = "Ainesosat";  // Change to Ainesosat
 const LABEL_INSTRUCTIONS = "Ohje";     // Change to Ohje
 
-function openModal(title, content) {
-    document.getElementById('modalTitle').innerText = title;
-    document.getElementById('modalContent').innerText = content;
-    document.getElementById('recipeModal').style.display = 'flex'; // Show the modal
-}
+// Ensure the modal is hidden by default
+document.getElementById('recipeModal').style.display = 'none';
 
-// Close the modal when the close button is clicked
-document.getElementById('closeModal').addEventListener('click', function() {
-    document.getElementById('recipeModal').style.display = 'none'; // Hide the modal
-});
-
-// Close the modal if the user clicks outside the modal content
-window.onclick = function(event) {
-    if (event.target === document.getElementById('recipeModal')) {
-        document.getElementById('recipeModal').style.display = 'none'; // Hide the modal
-    }
-}
+// Function to open the modal with content
 function openModal(title) {
     const modalTitle = document.getElementById('modalTitle');
     const modalContent = document.getElementById('modalContent');
@@ -166,19 +153,32 @@ function openModal(title) {
 
         // Close modal when the close button is clicked
         document.getElementById('closeModal').onclick = function () {
-            modal.style.display = 'none';
+            modal.style.display = 'none'; // Hide the modal
         }
 
         // Close modal when clicking outside of the modal content
         window.onclick = function (event) {
             if (event.target === modal) {
-                modal.style.display = 'none';
+                modal.style.display = 'none'; // Hide the modal
             }
         }
     } else {
         console.error('Recipe not found!');
     }
 }
+
+// Close the modal when the close button is clicked
+document.getElementById('closeModal').addEventListener('click', function() {
+    document.getElementById('recipeModal').style.display = 'none'; // Hide the modal
+});
+
+// Close the modal if the user clicks outside the modal content
+window.onclick = function(event) {
+    if (event.target === document.getElementById('recipeModal')) {
+        document.getElementById('recipeModal').style.display = 'none'; // Hide the modal
+    }
+}
+
 
 // Function to get the recipe data based on the title
 function getRecipeData(title) {
@@ -259,7 +259,7 @@ function getRecipeData(title) {
 
             ],
             instructions: [
-                'Laita uuni lämpenemään 175 asteeseen. Voitele irtopohjavuoan (Ø 20 cm) reunat voilla ja pingota pohjalle leivinpaperi.',
+                'Laita uuni lämpenemään 175 asteeseen. Voitele irtopohjavuoan (20 cm) reunat voilla ja pingota pohjalle leivinpaperi.',
                 'Siivilöi jauhot kulhoon. Siivilöi kaakao joukkoon ja lisää suola. Sekoita väriaine maitoon.',
                 'Vatkaa voi ja sokerit sähkövatkaimella. Lisää munat yksitellen koko ajan vatkaten. Lisää puolet jauhoseoksesta ja puolet nesteestä taikinaan. Sekoita huolellisesti. Lisää loput jauhot ja neste. Sekoita, kunnes taikina on tasaista.',
                 'Sekoita sooda valkoviinietikkaan ja kaada kuohuva seos taikinaan. Sekoita nopeasti. Kaada taikina vuokaan ja paista uunin keskitasossa 30-40 min. Tarkista kypsyys tikulla.',

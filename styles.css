@@ -1034,15 +1034,31 @@ body {
     }
 }
 /* Recipe Modal Styling */
+.modal {
+    display: none; /* Ensure the modal is hidden by default */
+    position: fixed; /* Ensure modal is fixed on screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 1000; /* Ensure it sits on top of other content */
+}
+
+
 .modal-content {
     padding: 20px;
     width: 80%;
     max-width: 600px;
+    max-height: 90vh; /* Allow modal to fit within the viewport */
     margin: auto;
     border-radius: 8px;
     background-color: #fcebc5;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    overflow-y: auto; /* Allow scrolling if content overflows */
+    overflow-y: auto; /* Allow scrolling within modal if content exceeds */
     text-align: left; /* Align text to the left */
 }
 
@@ -1062,10 +1078,11 @@ ul, ol {
 li {
     margin-bottom: 8px;
 }
+
 /* Scroll behavior for smaller screens */
 @media screen and (max-width: 600px) {
     .modal-content {
-        max-height: 90vh;  /* Allow a little more space on smaller screens */
+        max-height: 80vh;  /* Allow a little more space on smaller screens */
         overflow-y: auto;  /* Make sure content scrolls if needed */
     }
 }
