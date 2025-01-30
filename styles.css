@@ -887,6 +887,11 @@ body {
     border-radius: 10px; /* Optional: Rounded corners for a polished look */
   }
  
+/* Prevent horizontal scrolling */
+body {
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
 /* General Styling for Kakut Section */
 .kakut-section {
     display: flex;
