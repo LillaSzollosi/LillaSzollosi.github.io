@@ -515,7 +515,7 @@ header {
 /* Tulossa Image Section */
 .tulossa-section {
     display: flex;
-    justify-content: center; /* Center the image on widescreen */
+    justify-content: center; /* Center the image */
     align-items: center;
     margin-top: 80px; /* Space from the header */
     padding: 0 20px; /* Padding for spacing */
@@ -523,24 +523,26 @@ header {
 }
 
 .tulossa-image {
-    max-width: 100%; /* Make the image fit within the container */
+    max-width: 90%; /* Prevent the image from being too wide */
     height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the image horizontally */
 }
 
-/* Adjust image on mobile */
+/* Adjust for mobile */
 @media (max-width: 767px) {
     .tulossa-section {
-        padding: 0 10px; /* Adjust padding on mobile to prevent overflow */
-        margin-top: 120px; /* Add more space from header */
+        padding: 0 10px; /* Reduce padding for smaller screens */
+        margin-top: 120px; /* Add more space from the header */
     }
 
     .tulossa-image {
-        width: 90%; /* Reduce image size on mobile to fit better */
+        width: 85%; /* Reduce image size to fit mobile screens better */
         height: auto; /* Maintain aspect ratio */
-        margin-bottom: 15px; /* Space below the image */
+        margin-bottom: 15px; /* Add space below the image */
     }
-    
-   /* Adjust for laptops (768px to 1024px) */
+}
+
+/* Adjust for laptops (768px to 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
     .tulossa-section {
         padding: 0 15px; /* Slightly reduce padding for laptops */
@@ -548,7 +550,7 @@ header {
     }
 
     .tulossa-image {
-        width: 80%; /* Reduce image size for laptops */
+        width: 70%; /* Reduce image size for laptops */
         height: auto; /* Maintain aspect ratio */
         margin-bottom: 10px; /* Add space below the image */
     }
@@ -561,7 +563,7 @@ header {
         height: auto; /* Maintain aspect ratio */
     }
 }
-}
+
 /* Make the footer stick at the bottom */
 html, body {
     height: 100%; /* Full height for body */
