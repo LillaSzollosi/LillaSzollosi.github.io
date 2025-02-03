@@ -539,17 +539,26 @@ header {
         height: auto; /* Maintain aspect ratio */
         margin-bottom: 15px; /* Space below the image */
     }
-    /* Adjust for laptops (768px to 1024px) */
+    
+   /* Adjust for laptops (768px to 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
     .tulossa-section {
-        padding: 0 15px; /* Slightly reduce padding */
-        margin-top: 100px; /* Add a bit more space */
+        padding: 0 15px; /* Slightly reduce padding for laptops */
+        margin-top: 100px; /* Add space from the header */
     }
 
     .tulossa-image {
-        width: 95%; /* Slightly reduce image size */
+        width: 80%; /* Reduce image size for laptops */
         height: auto; /* Maintain aspect ratio */
-        margin-bottom: 10px; /* Space below the image */
+        margin-bottom: 10px; /* Add space below the image */
+    }
+}
+
+/* Adjust for larger screens */
+@media (min-width: 1025px) {
+    .tulossa-image {
+        max-width: 70%; /* Slightly reduce image size for widescreens */
+        height: auto; /* Maintain aspect ratio */
     }
 }
 }
